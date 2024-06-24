@@ -73,6 +73,30 @@ TITLE = "Buscaminas"
 
 
 
+# Validación de configuraciones
+try:
+    if WIDTH <= 0:
+        raise ValueError("WIDTH debe ser mayor que 0.")
+    if HEIGHT <= 0:
+        raise ValueError("HEIGHT debe ser mayor que 0.")
+    if TILESIZE <= 0:
+        raise ValueError("TILESIZE debe ser mayor que 0.")
+    if FPS <= 0:
+        raise ValueError("FPS debe ser mayor que 0.")
+    if ROWS <= 0:
+        raise ValueError("ROWS debe ser mayor que 0.")
+    if COLS <= 0:
+        raise ValueError("COLS debe ser mayor que 0.")
+    if AMOUNT_MINES <= 0:
+        raise ValueError("AMOUNT_MINES debe ser mayor que 0.")
+    if AMOUNT_MINES >= ROWS * COLS:
+        raise ValueError("AMOUNT_MINES debe ser menor que el número total de casillas.")
+except ValueError as ve:
+    print(f"Error en las configuraciones: {ve}")
+
+
+
+
 ###
 
 
