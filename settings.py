@@ -1,13 +1,9 @@
 import pygame # Importar el módulo pygame
 import os # Importar el módulo para manipular rutas
 
-
-
-
-
+###
 
 ###COLORES (r, g, b)
-
 
 WHITE = (255, 255, 255)
 # Definir color blanco
@@ -39,10 +35,7 @@ YELLOW = (255, 255, 0)
 BGCOLOUR = DARKGREY
 # Definir color de fondo del juego
 
-
-
-
-
+###
 
 ###CONFIGURACIÓN DEL JUEGO
 
@@ -71,34 +64,39 @@ FPS = 60
 TITLE = "Buscaminas"
 # Título de la ventana del juego
 
-
+###
 
 # Validación de configuraciones
 try:
     if WIDTH <= 0:
         raise ValueError("WIDTH debe ser mayor que 0.")
+        # Arroja error si el ancho es menor o igual a cero.
     if HEIGHT <= 0:
         raise ValueError("HEIGHT debe ser mayor que 0.")
+        # Arroja error si la altura es menor o igual a cero.
     if TILESIZE <= 0:
         raise ValueError("TILESIZE debe ser mayor que 0.")
+        # Arroja error si el tamaño de las casillas es menor o igual a cero.
     if FPS <= 0:
         raise ValueError("FPS debe ser mayor que 0.")
+        # Arroja error si la cantidad fotogramos por segundo designada es menor o igual a cero.
     if ROWS <= 0:
         raise ValueError("ROWS debe ser mayor que 0.")
+        # Arroja error si la cantidad de filas es menor o igual a cero.
     if COLS <= 0:
         raise ValueError("COLS debe ser mayor que 0.")
+        # Arroja error si la cantidad de columnas es menor o igual a cero.
     if AMOUNT_MINES <= 0:
         raise ValueError("AMOUNT_MINES debe ser mayor que 0.")
+        # Arroja error si la cantidad de minas es menor o igual que cero.
     if AMOUNT_MINES >= ROWS * COLS:
         raise ValueError("AMOUNT_MINES debe ser menor que el número total de casillas.")
+        # Arroja error si la cantidad de minas iguala o supera la cantidad total de casillas.
 except ValueError as ve:
     print(f"Error en las configuraciones: {ve}")
-
-
-
+    # Imprime en la conolsa el error detectado.
 
 ###
-
 
 tile_numbers = []
 # Lista para las imágenes de los números de pistas
@@ -106,8 +104,8 @@ tile_numbers = []
 for i in range(1, 9):
 # Recorrer los números del 1 al 8
 
-    tile_numbers.append(pygame.transform.scale(pygame.image.load(os.path.join("assets", f"Tile{i}.png")), (TILESIZE, TILESIZE)))
-    # Cargar y escalar las imágenes de los números de pistas
+tile_numbers.append(pygame.transform.scale(pygame.image.load(os.path.join("assets", f"Tile{i}.png")), (TILESIZE, TILESIZE)))
+# Cargar y escalar las imágenes de los números de pistas
 
 tile_empty = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileEmpty.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la casilla vacía
