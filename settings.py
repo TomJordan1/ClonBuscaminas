@@ -1,5 +1,6 @@
 import pygame # Importar el módulo pygame
 import os # Importar el módulo para manipular rutas
+import logging # Importar el módulo logging
 
 ###
 
@@ -49,7 +50,7 @@ ROWS = 20
 COLS = 20
 # Número de columnas en el tablero
 
-AMOUNT_MINES = 15
+AMOUNT_MINES = 20
 # Cantidad de minas en el tablero
 
 WIDTH = TILESIZE * ROWS
@@ -104,23 +105,23 @@ tile_numbers = []
 for i in range(1, 9):
 # Recorrer los números del 1 al 8
 
-tile_numbers.append(pygame.transform.scale(pygame.image.load(os.path.join("assets", f"Tile{i}.png")), (TILESIZE, TILESIZE)))
+    tile_numbers.append(pygame.transform.scale(pygame.image.load(os.path.join("assets", f"Tile{i}.png")), (TILESIZE, TILESIZE)))
 # Cargar y escalar las imágenes de los números de pistas
 
-tile_empty = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileEmpty.png")), (TILESIZE, TILESIZE))
+    tile_empty = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileEmpty.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la casilla vacía
 
-tile_exploded = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileExploded.png")), (TILESIZE, TILESIZE))
+    tile_exploded = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileExploded.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la mina explotada
 
-tile_flag = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileFlag.png")), (TILESIZE, TILESIZE))
+    tile_flag = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileFlag.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la bandera
 
-tile_not_mine = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileNotMine.png")), (TILESIZE, TILESIZE))
+    tile_not_mine = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileNotMine.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la casilla sin mina
 
-tile_unknown = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileUnknown.png")), (TILESIZE, TILESIZE))
+    tile_unknown = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileUnknown.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la casilla sin abrir
 
-tile_mine = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileMine.png")), (TILESIZE, TILESIZE))
+    tile_mine = pygame.transform.scale(pygame.image.load(os.path.join("assets", "TileMine.png")), (TILESIZE, TILESIZE))
 # Cargar y escalar la imagen de la mina
