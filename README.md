@@ -1,4 +1,7 @@
 <center> # 💣 Clon del Buscaminas 💣 </center>
+
+<hr>
+
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 <hr>
 <p align="center">"Siempre parece imposible, hasta que se hace".
