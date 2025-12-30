@@ -1,4 +1,4 @@
-<center> # 💣 Clon del Buscaminas 💣 </center>
+<center> 💣 Clon del Buscaminas 💣 </center>
 
 <hr>
 
